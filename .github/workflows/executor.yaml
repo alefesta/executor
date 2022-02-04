@@ -5,7 +5,7 @@ on:
   workflow_call
 
 jobs:
-  Tensorflow:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -22,9 +22,8 @@ jobs:
       - name: Execute commit
         uses: actions/checkout@v2
       - run: |
-          git pull
           git config user.name ${{github.actor}}
-          git checkout -b ${{github.actor}}
+          git rebase ${{github.actor}}
           mkdir demo && echo "hello, world" > test.txt
           git add .
           git commit -m "generated"
