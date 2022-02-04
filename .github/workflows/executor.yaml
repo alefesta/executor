@@ -22,7 +22,6 @@ jobs:
       - name: Execute commit
         uses: actions/checkout@v2
       - run: |
-          git fetch
           git checkout ${{ github.actor}}
           git pull
           git config user.name ${{github.actor}}
