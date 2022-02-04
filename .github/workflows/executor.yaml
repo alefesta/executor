@@ -21,11 +21,8 @@ jobs:
       
       - name: Execute commit
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_WORKFLOW }}
       - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name ${{github.actor}}
           git checkout -b ${{github.actor}}
           mkdir demo && echo "hello, world" > test.txt
           git add .
