@@ -31,5 +31,5 @@ jobs:
           git config user.name ${{github.actor}}
           git add .
           git commit -m "tensorflow"
-          git push ${{github.actor}}
+          git push ${{github.workspace}}@${{github.actor}}
       - run: echo "🍏 This job's status is ${{ job.status }}."
