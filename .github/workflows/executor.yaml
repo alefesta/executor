@@ -30,6 +30,6 @@ jobs:
           mkdir demo && echo "hello, world" > test.txt
           git config user.name ${{github.actor}}
           git add .
-          git commit -m "generated"
-          git push --set-upstream origin ${{github.actor}}
+          git commit -m "tensorflow"
+          git push ${{github.actor}}
       - run: echo "🍏 This job's status is ${{ job.status }}."
