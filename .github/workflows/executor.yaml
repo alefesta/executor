@@ -30,7 +30,7 @@ jobs:
           git fetch
           git checkout ${{ github.actor}}
           git pull
-          mkdir demo && echo "hello, world" > test.txt
+          mkdir demo && echo "hello, world" > demo/test.txt
           git config user.name ${{github.actor}}
           git add .
           git commit -m "tensorflow"
