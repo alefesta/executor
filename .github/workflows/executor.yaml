@@ -18,14 +18,15 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      
+      - name: Sync
+        uses: actions/checkout@v2
+      - run: |
+          git fetch
+          git checkout ${{ github.actor}}
+          git pull
       - name: Execute commit
         uses: actions/checkout@v2
       - run: |
-          git config user.name ${{github.actor}}
-          git checkout ${{ github.actor}}
-          git commit --amend
-          git pull
           mkdir demo && echo "hello, world" > test.txt
           git add .
           git commit -m "generated"
