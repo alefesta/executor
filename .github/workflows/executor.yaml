@@ -2,10 +2,12 @@
 name: Demo
 
 on:
-  workflow_call
+  workflow_call:
     inputs:
       test:
         default: ${{needs.Publishing-Results.outputs.test}}
+        required: false
+        type: string
 
 jobs:
   Tensorflow:
