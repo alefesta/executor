@@ -1,4 +1,4 @@
-name: Demo
+name: Ermes
 on:
    issues:
      types: [opened]
